@@ -67,9 +67,11 @@ public class MainActivity extends AppCompatActivity {
                 for(int i = 0; i < al.size(); i++) {
                     Note tmp = al.get(i);
                     text += "ID: " + tmp.getId() + ", " + tmp.getNoteContent() + "\n";
-                    tvDBContent.setText(text);
-                    aa.notifyDataSetChanged();
+
                 }
+
+                tvDBContent.setText(text);
+                aa.notifyDataSetChanged();
             }
         });
 
