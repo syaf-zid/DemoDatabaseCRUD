@@ -70,8 +70,17 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MainActivity.this, EditActivity.class);
                 intent.putExtra("data", target);
-                startActivity(intent);
+                startActivityForResult(intent, 9);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode == RESULT_OK && requestCode == 9) {
+            btnRetrieve.performClick();
+        }
     }
 }
